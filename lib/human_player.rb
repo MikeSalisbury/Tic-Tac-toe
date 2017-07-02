@@ -8,9 +8,9 @@ class HumanPlayer
   def get_move
     p "Where would you like to move? (in the form 0, 0)"
     move = gets.chomp
-    pos = [move.split(", ")[0].to_i, move.split(", ")[1].to_i]
+    pos = move.split(",").map(&:to_i) 
   end
-  
+
   def display(board)
     print "-" * board.grid.length * 12
     puts ""

@@ -19,8 +19,12 @@ attr_accessor :mark, :board
     until board.over?
       play_turn
     end
-    p "#{current_player.name} is the winner!"
-    @current_player.display(board)
+    if board.winner
+      p "#{current_player.name} is the winner!"
+      @current_player.display(board)
+    else
+      p "Cats game - It's a tie!"
+    end
   end
 
   def play_turn
